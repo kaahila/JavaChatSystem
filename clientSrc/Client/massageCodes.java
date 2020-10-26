@@ -1,0 +1,49 @@
+package Client;
+
+public enum massageCodes {
+	
+	/*
+	 * Login Codes
+	 */
+	
+	LOGINREQUEST("LOGINREQUEST"),
+	LOGINANSWER("LOGINANSWER"),
+
+	/*
+	 * Register Codes
+	 */
+
+	REGISTERREQUEST("REGISTERREQUEST"),
+	REGISTERANSWER("REGISTERANSWER"),
+
+	/*
+	 * TextMassage Codes
+	 */
+
+	SENDTEXTMASSAGETOCLIENT("SENDTEXTMASSAGETOCLIENT"),
+	SENDTEXTMASSAGETOSERVER("SENDTEXTMASSAGETOSERVER")
+	;
+	
+	//Construktor
+	private final String massage;
+	private massageCodes(final String massage) {
+		this.massage = massage;
+	}
+	
+	/*
+	 * the toString() that returns the String of the Enums
+	 */
+	
+	@Override
+	public String toString() {
+		return this.massage;
+	}
+	
+	public static massageCodes toEnum(String input) {
+		massageCodes ret = null;
+		
+		ret = massageCodes.valueOf(input);
+		
+		return ret;
+	}
+}

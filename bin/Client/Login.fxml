@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="serverAdressField" layoutX="186.0" layoutY="247.0" promptText="Server Adress" />
+      <TextField fx:id="serverPortField" layoutX="355.0" layoutY="247.0" promptText="Server Port" />
+      <Label fx:id="connectionLable" layoutX="185.0" layoutY="260.0" prefHeight="10.0" prefWidth="150.0" text="Label" visible="false" />
+      <TextField fx:id="usernameField" layoutX="186.0" layoutY="288.0" promptText="Username" />
+      <PasswordField fx:id="passwordField" layoutX="186.0" layoutY="338.0" promptText="Password" />
+      <Button fx:id="loginButton" layoutX="185.0" layoutY="370.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="26.0" prefWidth="150.0" text="Login" />
+      <Label fx:id="loginLabel" layoutX="185.0" layoutY="397.0" prefHeight="10.0" text="Label" visible="false" />
+      <Button fx:id="loginButton1" layoutX="185.0" layoutY="424.0" mnemonicParsing="false" onAction="#registerButtonAction" prefHeight="26.0" prefWidth="150.0" text="Register" />
+   </children>
+</AnchorPane>
