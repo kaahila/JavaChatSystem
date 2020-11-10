@@ -31,11 +31,16 @@ public class ChatRoom {
 	}
 	
 	public void newMassageInput(ServerClient user, String input) {
-		input = user.getUsernameString()+"#"+input;
+		input = user.getUsernameString()+input;
 		
+		if (clientsInRoom.size() >= 2) {
 		for (ClientHandeler clientHandeler : clientsInRoom) {
-			
-			clientHandeler.sendMassage(massageCodes.SENDTEXTMASSAGETOCLIENT, input);
+			if (clientHandeler.getAccountHandler().getServerClient() != user) {
+				clientHandeler.sendMassage(massageCodes.SENDTEXTMASSAGETOCLIENT, input);
+			}
+		}
+		} else {
+			return;
 		}
 	}
 	

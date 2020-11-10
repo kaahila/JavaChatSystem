@@ -5,15 +5,18 @@ package Client;
 
 
 
-import Server.ServerClient.ClientHandeler.massageCodes;
+import Client.massageCodes;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 
 
@@ -280,18 +283,39 @@ public class ApplicationController {
 	}
 	//TextField Animation
 	
+	@FXML
+	ScrollPane massagePane;
 	
+	public void setMassagePaneContent() {
+		ChatBubble.initGroup();
+		massagePane.setContent(ChatBubble.getBubblesGroup());
+		
+	}
 	
-	//TextArea Controlls
-	public void addMassage(String username, String massage) {
-		if (massage.length() >= 1) {
+	//TextArea Controlls	
+	public void addMassage(ChatBubbleMode chatBubbleMode ,String username, String massage) {
+		if (massage.length() >= 1) {		
 			Platform.runLater(new Runnable() {
 	
 				@Override
 				public void run() {
 					// TODO Auto-generated method stub
-						textArea.appendText(massage);
-						textArea.appendText("\n");
+					//	textArea.appendText(massage);
+					//	textArea.appendText("\n");
+						
+					
+						
+					
+					new ChatBubble(chatBubbleMode, username, massage);
+					
+					//ChatBubble.addBubble(new ChatBubble(chatBubbleMode, username, massage));
+					
+					
+						
+						
+						
+					
+					
 				}
 			});
 			

@@ -75,10 +75,14 @@ public class ClientHandeler extends Thread {
 	
 	private void massageCheck(String reviced) {
 		if (reviced != null) {
-			
+		
 		massageCode = massageCodes.toEnum(reviced.substring(0, reviced.indexOf('#')));
 		
 		reviced = reviced.substring(reviced.indexOf('#'));
+		
+		/*if (accountHandler.getServerClient() == null && (massageCode != massageCodes.LOGINREQUEST || massageCode != massageCodes.REGISTERREQUEST)) {
+			return;
+		}*/
 		
 			switch (massageCode) {
 			case LOGINREQUEST:  //Login

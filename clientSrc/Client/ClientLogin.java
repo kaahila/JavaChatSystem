@@ -1,6 +1,6 @@
 package Client;
 
-import Server.ServerClient.ClientHandeler.massageCodes;
+import Client.massageCodes;
 
 public class ClientLogin {
 	String usernameString = "";

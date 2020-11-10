@@ -7,10 +7,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import Client.massageCodes;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
-
-import Server.ServerClient.ClientHandeler.massageCodes;
 
 public class ClientMassanger extends Thread {
 	private DataInputStream input;
@@ -87,7 +85,11 @@ public class ClientMassanger extends Thread {
 				break;
 				
 			case SENDTEXTMASSAGETOSERVER: //Massage
+				
+				applicationController.addMassage(ChatBubbleMode.SENDBYME,"Me" ,massage);
+
 				massage = massageCode.toString()+"#"+massage;
+				
 				break;
 				
 			default:
@@ -146,7 +148,7 @@ public class ClientMassanger extends Thread {
 				
 				System.out.println("[ClientMassanger] New Massage reviced");
 
-				applicationController.addMassage(reviced.substring(1, index), reviced.substring(index+1));
+				applicationController.addMassage(ChatBubbleMode.SENDBYANOTHERUSER ,reviced.substring(1, index), reviced.substring(index+1));
 				break;
 			default:
 				

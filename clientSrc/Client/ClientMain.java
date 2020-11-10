@@ -10,6 +10,7 @@ import javafx.application.Platform;
 import javafx.stage.Stage;
 import sun.security.jgss.LoginConfigImpl;
 import javafx.scene.Scene;
+import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.fxml.FXMLLoader;
@@ -20,21 +21,26 @@ public class ClientMain extends Application {
 	//Scene Variablen
 	private static FXMLLoader loginLoader = new FXMLLoader();
 	private static FXMLLoader scene1Loader = new FXMLLoader();
+	private static FXMLLoader textBubbleLoader = new FXMLLoader();
 	
 	private static AnchorPane loginPane = new AnchorPane();
 	private static AnchorPane scene1Pane = new AnchorPane();
+	
 	
 	private static Scene scene;
 	
 	private static Stage primaryStage = new Stage();
 	
+	private static ChatBubbleController chatBubbleController = new ChatBubbleController();
 	private static ApplicationController controller = new ApplicationController();
 	@Override
 	public void start(Stage newPrimaryStage) {
 		try {
-			this.primaryStage = newPrimaryStage;
+			ClientMain.primaryStage = newPrimaryStage;
+			primaryStage.setTitle("JODT CONNECT");
 			loginPane = loadLogin();
 			scene1Pane = loadScene1();
+			controller.setMassagePaneContent();
 			scene = new Scene(loginPane,600,600);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
@@ -44,7 +50,7 @@ public class ClientMain extends Application {
 		}
 	}
 	
-	public AnchorPane loadLogin() {
+	private AnchorPane loadLogin() {
 		AnchorPane ret = null;
 		try {
 		loginLoader.setLocation(getClass().getResource("Login.fxml"));
@@ -59,7 +65,7 @@ public class ClientMain extends Application {
 		return ret;
 	}
 	
-	public AnchorPane loadScene1() {
+	private AnchorPane loadScene1() {
 		AnchorPane ret = null;
 		try {
 		scene1Loader.setLocation(getClass().getResource("Scene1.fxml"));
@@ -73,6 +79,9 @@ public class ClientMain extends Application {
 		
 		return ret;
 	}
+	
+
+
 	
 	//Variablen
 	private static ClientConnecter clientConnecter = new ClientConnecter();
@@ -106,6 +115,11 @@ public class ClientMain extends Application {
 	public static ApplicationController getController() {
 		return controller;
 	}
+	
+	public static AnchorPane getScene1Pane() {
+		return scene1Pane;
+	}
+	
 	//Setter
 	public static void setClientMassanger() {
 		if (clientSocket != null) {
