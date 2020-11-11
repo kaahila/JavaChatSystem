@@ -10,13 +10,18 @@ public class ChatRoom {
 	
 	
 	private String name = "";
+	private int id;
 	
 	private Vector<ClientHandeler> clientsInRoom = new Vector<ClientHandeler>();
 	
 	//Konstruktor
-	public ChatRoom(String name) {
-		if(name.length() > 1) {
+	public ChatRoom(int id, String name) {
+		if(name.length() >= 1) {
 		this.name = name;
+		
+		for (ClientHandeler clientHandeler : ClientHandeler.getClientHandelers()) {
+			clientHandeler.sendMassage(massageCodes.CHATROOMCREATED, id+"#"+name);
+		}
 		}
 		
 	}
@@ -49,14 +54,35 @@ public class ChatRoom {
 	 */
 	
 	public void connectToRoom(ClientHandeler client) {
+		disconnectFromRoom(client);
 		System.out.println("[ClientRoom, "+ name +"] Client "+ client.getAccountHandler().getServerClient().getUsernameString() +" connectet");
 		clientsInRoom.add(client);
 		client.setAktuelleChatRoom(this);
 	}
 	
+	/*
+	 * Disconnect the User from the actual ChatRoom
+	 */
 	
+	public void disconnectFromRoom(ClientHandeler client) {
+		if (client.getAktuelleChatRoom() == null) {
+			return;
+		}
+		if (client.getAktuelleChatRoom().getClientsInRoom().contains(client)) {
+			client.getAktuelleChatRoom().getClientsInRoom().remove(client);
+		}
+		
+	}
+	
+	public int getId() {
+		return id;
+	}
 	
 	public String getName() {
 		return name;
+	}
+	
+	public Vector<ClientHandeler> getClientsInRoom() {
+		return clientsInRoom;
 	}
 }

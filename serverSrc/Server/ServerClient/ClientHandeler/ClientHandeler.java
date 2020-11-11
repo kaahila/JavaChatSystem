@@ -13,7 +13,7 @@ import Server.ServerRooms.ServerRoomsManager;
 
 public class ClientHandeler extends Thread {
 	
-	private static ServerRoomsManager serverRoomsManager = Server.getServerRoomsManager();
+	private ServerRoomsManager serverRoomsManager = Server.getServerRoomsManager();
 	private Socket clientSocket;
 	private DataInputStream input;
 	private DataOutputStream output;
@@ -111,9 +111,33 @@ public class ClientHandeler extends Thread {
 				break;
 				
 			case SENDTEXTMASSAGETOSERVER: //Massage
-				aktuelleChatRoom.addMassageToChatRoom(accountHandler.getServerClient() , reviced);
+				this.aktuelleChatRoom.addMassageToChatRoom(accountHandler.getServerClient() , reviced);
 				break;
 				
+			case CHANGECHATROOMREQUEST: //Massage
+				
+				int id = Integer.parseInt(reviced);
+				
+				serverRoomsManager.changeRoom(id, this);
+				
+				break;
+				
+			case CHATROOMCREATIONANSWER:
+				
+				
+				
+				if (reviced.contains("true")) {
+					
+				} else if(reviced.contains("false")){
+					try {
+						clientSocket.close();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+				
+				break;
 			default:
 					System.err.println("[ClientHandeler] ClientHandeler "+clientSocket+" Code is wrong");
 				break;
@@ -137,6 +161,20 @@ public class ClientHandeler extends Thread {
 			
 			case SENDTEXTMASSAGETOCLIENT: //SendMassage
 				massage = massageCode.toString()+"#"+massage;
+				break;
+				
+			case CHANGECHATROOMANSWER: //CHANGECHATROOM
+				massage = massageCode.toString()+"#"+massage;
+				break;
+				
+			case CHATROOMCREATED:
+				massage = massageCode.toString()+"#"+massage;
+
+				break;
+				
+			case CHATROOMREMOVED:
+				massage = massageCode.toString()+"#"+massage;
+
 				break;
 			default:
 				System.err.println("[ClientHandeler] Wrong massageCode in sendMassage() of "+clientSocket);
@@ -165,7 +203,10 @@ public class ClientHandeler extends Thread {
 	}
 	
 	public ChatRoom getAktuelleChatRoom() {
-		return aktuelleChatRoom;
+		
+			return aktuelleChatRoom;
+		
+		
 	}
 	
 	public void connectToChatRoom(int index) {

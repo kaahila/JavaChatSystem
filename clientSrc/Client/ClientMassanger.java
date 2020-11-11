@@ -92,6 +92,10 @@ public class ClientMassanger extends Thread {
 				
 				break;
 				
+			case CHANGECHATROOMREQUEST: //Change ChatRoom
+				massage = massageCode.toString()+"#"+massage;
+				break;
+				
 			default:
 				System.err.println("[ClientMassanger] Wrong massageCode in sendMassage() of "+clientSocket);
 				return;
@@ -149,6 +153,10 @@ public class ClientMassanger extends Thread {
 				System.out.println("[ClientMassanger] New Massage reviced");
 
 				applicationController.addMassage(ChatBubbleMode.SENDBYANOTHERUSER ,reviced.substring(1, index), reviced.substring(index+1));
+				break;
+				
+			case CHANGECHATROOMANSWER:
+					
 				break;
 			default:
 				

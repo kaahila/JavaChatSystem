@@ -46,6 +46,8 @@ public class Server {
 			System.out.println("[Server] stopping Server");
 			System.exit(0);
 		}
+		
+		serverRoomsManager.createChatRoom("Main Room");
 	}
 	
 	//Getter

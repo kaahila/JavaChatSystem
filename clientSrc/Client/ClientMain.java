@@ -31,6 +31,7 @@ public class ClientMain extends Application {
 	
 	private static Stage primaryStage = new Stage();
 	
+	private static RoomController roomController = new RoomController();
 	private static ChatBubbleController chatBubbleController = new ChatBubbleController();
 	private static ApplicationController controller = new ApplicationController();
 	@Override
@@ -40,7 +41,6 @@ public class ClientMain extends Application {
 			primaryStage.setTitle("JODT CONNECT");
 			loginPane = loadLogin();
 			scene1Pane = loadScene1();
-			controller.setMassagePaneContent();
 			scene = new Scene(loginPane,600,600);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
@@ -48,6 +48,7 @@ public class ClientMain extends Application {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		
 	}
 	
 	private AnchorPane loadLogin() {
@@ -118,6 +119,14 @@ public class ClientMain extends Application {
 	
 	public static AnchorPane getScene1Pane() {
 		return scene1Pane;
+	}
+	
+	public static ChatBubbleController getChatBubbleController() {
+		return chatBubbleController;
+	}
+	
+	public static RoomController getRoomController() {
+		return roomController;
 	}
 	
 	//Setter

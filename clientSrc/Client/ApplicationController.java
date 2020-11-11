@@ -17,6 +17,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 
 
@@ -284,13 +285,9 @@ public class ApplicationController {
 	//TextField Animation
 	
 	@FXML
-	ScrollPane massagePane;
+	GridPane massagePane;
 	
-	public void setMassagePaneContent() {
-		ChatBubble.initGroup();
-		massagePane.setContent(ChatBubble.getBubblesGroup());
-		
-	}
+	private static int rowIndex = 0;
 	
 	//TextArea Controlls	
 	public void addMassage(ChatBubbleMode chatBubbleMode ,String username, String massage) {
@@ -304,7 +301,19 @@ public class ApplicationController {
 					//	textArea.appendText("\n");
 						
 					
-						
+						switch (chatBubbleMode) {
+						case SENDBYME:
+							massagePane.add(new ChatBubble(chatBubbleMode, username, massage).getBubble(), 1, rowIndex);
+							rowIndex++;
+							break;
+						case SENDBYANOTHERUSER:
+							massagePane.add(new ChatBubble(chatBubbleMode, username, massage).getBubble(), 0, rowIndex);
+							rowIndex++;
+
+							break;
+						default:
+							break;
+						}
 					
 					new ChatBubble(chatBubbleMode, username, massage);
 					

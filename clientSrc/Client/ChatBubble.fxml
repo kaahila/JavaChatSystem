@@ -1,33 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.5763358778625954" focusTraversable="false" minHeight="50.0" minWidth="150.0" orientation="VERTICAL" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <items>
-      <AnchorPane>
-         <children>
-            <Label fx:id="nameText" text="Name" textFill="#295c26">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <effect>
-                  <DropShadow color="WHITE" height="1.0" radius="0.0" width="1.0" />
-               </effect>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane>
-         <children>
-            <Label fx:id="massageText" layoutY="-1.0" text="Massage">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-   </items>
-</SplitPane>
+
+<Pane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#2d103c" height="84.0" stroke="BLACK" strokeType="INSIDE" width="147.0" />
+      <Label fx:id="nameText" layoutX="14.0" layoutY="6.0" text="Text" textFill="WHITE" textOverrun="CLIP">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="massageText" layoutX="105.0" layoutY="34.0" text="Text" textAlignment="RIGHT" textFill="WHITE" textOverrun="CLIP">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</Pane>
