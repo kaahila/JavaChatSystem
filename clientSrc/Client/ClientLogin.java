@@ -1,6 +1,7 @@
 package Client;
 
 import Client.massageCodes;
+import MainAndRessources.ClientMain;
 
 public class ClientLogin {
 	String usernameString = "";

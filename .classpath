@@ -2,8 +2,9 @@
 <classpath>
 	<classpathentry kind="src" path="serverSrc"/>
 	<classpathentry kind="src" path="clientSrc"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_261"/>
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/Users/drdoo/OneDrive/Schule/JavaProjekt/Other/mysql-connector-java-8.0.22.jar"/>
+	<classpathentry kind="lib" path="C:/Users/drdoo/OneDrive/Schule/JavaProjekt/Other/org.eclipse.fx.fxml.compiler_1.1.0-SNAPSHOT.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_271"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

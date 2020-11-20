@@ -1,4 +1,4 @@
-package Client;
+package MainAndRessources;
 
 public enum ChatBubbleMode {
 	SENDBYME,

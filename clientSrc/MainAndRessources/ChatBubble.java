@@ -1,4 +1,4 @@
-package Client;
+package MainAndRessources;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class ChatBubble {
 	public ChatBubble(ChatBubbleMode chatBubbleMode, String usernameText, String massageText) {
 		try {
 			
-				fxmlLoader.setLocation(getClass().getResource("ChatBubble.fxml"));
+			fxmlLoader.setLocation(getClass().getResource("ChatBubble.fxml"));
 			fxmlLoader.setController(chatBubbleController);
 			
 			
@@ -56,6 +56,15 @@ public class ChatBubble {
 	}
 	
 		
+	
+	
+	/*
+	 * JavaFx Methode that creates the raw Bubble
+	 */
+ 	
+	public void createBubble(String usernameInput, String massageInput) {
+		
 	}
 	
 
+}

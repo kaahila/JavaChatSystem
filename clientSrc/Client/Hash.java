@@ -16,7 +16,7 @@ public class Hash {
 		int teiler = 0;
 		int summeAlles = 0;
 		int mixMenge = 0;
-		int durchgänge = 0;
+		int durchgaenge = 0;
 		
 		
 		int[] passArr = new int[9], passOutArr = new int[9];
@@ -31,7 +31,7 @@ public class Hash {
 	public Hash(int newHashlaenge,String newInputPass) {
 		hashLaenge = newHashlaenge;
 		if (lengthTest(newInputPass)) {
-			outputHash = verschlüsselung(newInputPass);
+			outputHash = verschluesselung(newInputPass);
 		
 		}
 		
@@ -41,9 +41,14 @@ public class Hash {
 		
 	}
 	
-	//Verschlüsselung
+	//Verschlï¿½sselung
 	
-	public String verschlüsselung(String newInputPass) {
+	public String verschluesselung(String newInputPass) {
+
+		if (newInputPass.length() <= 9){
+			newInputPass += newInputPass;
+		}
+
 		//VARIABLEN
 		String ret = "";
 		
@@ -81,7 +86,7 @@ public class Hash {
 			
 		
 		do {
-			durchgänge++;
+			durchgaenge++;
 		
 			//Addition
 			addition();
@@ -108,7 +113,7 @@ public class Hash {
 		//Output
 		ret = sBuilder.toString();		
 		
-		System.out.println("Hashlänge: "+ret.length());
+		System.out.println("Hashlï¿½nge: "+ret.length());
 		
 		System.out.println("Hash: "+ret);
 		return ret;
@@ -118,7 +123,7 @@ public class Hash {
 	public boolean passTest(String newInputPass) {
 		boolean ret = false;
 		
-		if(verschlüsselung(newInputPass) == getHash()) {
+		if(verschluesselung(newInputPass) == getHash()) {
 			ret = true;
 		}
 		

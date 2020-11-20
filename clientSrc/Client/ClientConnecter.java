@@ -3,6 +3,8 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
 
+import MainAndRessources.ClientMain;
+
 public class ClientConnecter{
 	
 	private ApplicationController applicationController = ClientMain.getController();

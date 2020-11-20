@@ -1,0 +1,43 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property
+ */
+ 
+ .chatRoomButton {
+    -fx-position: relative;
+    -fx-overflow: hidden;
+ 	-fx-font-family: 'Arial';
+ 	-fx-font-size: 12px;
+ 	-fx-background-radius: 0;
+ 	-fx-background-insets: 0, 0 0 2 0; 
+ 	-fx-background-color: #5b5b5b, #ffffff;
+
+ }
+
+    .chatRoomButton:hover{
+     -fx-background-color: #5b5b5b, #d1d1d1;
+    }
+
+ $ripplecolor: #ff0000;
+
+ .ripple {
+    -fx-background-color: $ripplecolor;
+    -fx-width: 1rem;
+    -fx-height: 1rem;
+    -fx-position: absolute;
+    -fx-border-radius: 50%;
+    -fx-mix-blend-mode: screen;
+    -fx-transform translateX(-100%) translateY(-100%);
+    -fx-animation: ripple 1250ms ease-out forwards, fade 1500ms ease-out forwards;
+     }
+
+ @keyframes ripple{
+    0% {transform:translate(-100%, -100%)}
+
+    80% {transform:translate(-100%, -100%) scale(50) ;}
+
+    100% {transform:translate(-100%, -100%) scale(50);}
+ }
+
+ @keyframes fade{
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+ }

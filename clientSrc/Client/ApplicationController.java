@@ -5,10 +5,17 @@ package Client;
 
 
 
+import java.util.ArrayList;
+
 import Client.massageCodes;
+import MainAndRessources.ChatBubble;
+import MainAndRessources.ChatBubbleMode;
+import MainAndRessources.ChatRoomFx;
+import MainAndRessources.ClientMain;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.HPos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -18,6 +25,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
 
@@ -97,6 +106,8 @@ public class ApplicationController {
 			Thread.sleep(1000);
 			sendMassage.setDisable(false);
 		}
+		
+		addChatRoomToList(massageField.getText());
 			}
 	
 	//Login TextFields
@@ -213,6 +224,9 @@ public class ApplicationController {
 			});
 			ret = true;
 		} else {
+			
+		
+			
 			Platform.runLater(new Runnable() {
 				
 				@Override
@@ -245,6 +259,7 @@ public class ApplicationController {
 			
 			ret = true;
 		} else {
+			
 			Platform.runLater(new Runnable() {
 				
 				@Override
@@ -294,41 +309,47 @@ public class ApplicationController {
 		if (massage.length() >= 1) {		
 			Platform.runLater(new Runnable() {
 	
+				ChatBubble chatBubble = new ChatBubble(chatBubbleMode, username, massage);
+				
 				@Override
 				public void run() {
-					// TODO Auto-generated method stub
-					//	textArea.appendText(massage);
-					//	textArea.appendText("\n");
-						
 					
 						switch (chatBubbleMode) {
 						case SENDBYME:
-							massagePane.add(new ChatBubble(chatBubbleMode, username, massage).getBubble(), 1, rowIndex);
+						
+							massagePane.add(chatBubble.getBubble(), 1, rowIndex);
+							
 							rowIndex++;
 							break;
 						case SENDBYANOTHERUSER:
-							massagePane.add(new ChatBubble(chatBubbleMode, username, massage).getBubble(), 0, rowIndex);
+							massagePane.add(chatBubble.getBubble(), 0, rowIndex);
 							rowIndex++;
 
 							break;
 						default:
 							break;
 						}
-					
-					new ChatBubble(chatBubbleMode, username, massage);
-					
-					//ChatBubble.addBubble(new ChatBubble(chatBubbleMode, username, massage));
-					
-					
-						
-						
-						
-					
-					
 				}
 			});
 			
 		}
+	}
+	
+	/*
+	 * ChatRoomList
+	 */
+	
+	@FXML
+	VBox chatRoomList;
+	
+	public VBox getChatRoomList() {
+		return chatRoomList;
+	}
+		
+		private ArrayList<Pane> chatRoomFxList = new ArrayList<Pane>();
+	
+	public void addChatRoomToList(String text) {
+		chatRoomList.getChildren().add(new ChatRoomFx().load(text));
 	}
 
 }

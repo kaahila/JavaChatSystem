@@ -1,23 +1,30 @@
-package Client;
+package MainAndRessources;
 
 import java.io.IOException;
 import java.net.Socket;
 
 import javax.sound.midi.ControllerEventListener;
 
+import Client.ApplicationController;
+import Client.ClientConnecter;
+import Client.ClientLogin;
+import Client.ClientMassanger;
+import Client.RoomController;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.scene.Node;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import sun.security.jgss.LoginConfigImpl;
 import javafx.scene.Scene;
 import javafx.scene.control.SplitPane;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.fxml.FXMLLoader;
 
-
 public class ClientMain extends Application {
-	
+
 	//Scene Variablen
 	private static FXMLLoader loginLoader = new FXMLLoader();
 	private static FXMLLoader scene1Loader = new FXMLLoader();
@@ -34,30 +41,63 @@ public class ClientMain extends Application {
 	private static RoomController roomController = new RoomController();
 	private static ChatBubbleController chatBubbleController = new ChatBubbleController();
 	private static ApplicationController controller = new ApplicationController();
+	
 	@Override
 	public void start(Stage newPrimaryStage) {
 		try {
 			ClientMain.primaryStage = newPrimaryStage;
 			primaryStage.setTitle("JODT CONNECT");
+			primaryStage.getIcons().add(new Image(this.getClass().getResourceAsStream("logo.png")));
 			loginPane = loadLogin();
 			scene1Pane = loadScene1();
-			scene = new Scene(loginPane,600,600);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			scene = new Scene(loginPane,loginPane.getPrefWidth(),loginPane.getPrefHeight());
+			scene.getStylesheets().add(getClass().getResource("chatRoomButton.css").toExternalForm());
 			primaryStage.setScene(scene);
+			primaryStage.initStyle(primaryStage.getStyle().UNDECORATED);
+			makeDragable();
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 		
 	}
-	
+
+	//Inspiered by: https://github.com/V3rsion9/DarkLoginFX/blob/master/src/darklogin/AppController.java
+
+	double x = 0, y = 0;
+
+	private void makeDragable() {
+		loginPane.setOnMousePressed(((event) -> {
+			x = event.getSceneX();
+			y = event.getSceneY();
+		}));
+
+		loginPane.setOnMouseDragged(((event) -> {
+			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			stage.setX(event.getScreenX() - x);
+			stage.setY(event.getScreenY() - y);
+			stage.setOpacity(0.8f);
+		}));
+
+		loginPane.setOnDragDone(((event) -> {
+			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			stage.setOpacity(1.0f);
+		}));
+
+		loginPane.setOnMouseReleased(((event) -> {
+			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			stage.setOpacity(1.0f);
+
+		}));
+	}
+
 	private AnchorPane loadLogin() {
 		AnchorPane ret = null;
 		try {
-		loginLoader.setLocation(getClass().getResource("Login.fxml"));
+		loginLoader.setLocation(getClass().getResource("Login-GUI.fxml"));
 		loginLoader.setController(controller);
 		
-		ret = (AnchorPane)loginLoader.load();
+		ret = (AnchorPane) loginLoader.load();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

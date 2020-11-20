@@ -8,6 +8,8 @@ import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import Client.massageCodes;
+import MainAndRessources.ChatBubbleMode;
+import MainAndRessources.ClientMain;
 
 
 public class ClientMassanger extends Thread {
