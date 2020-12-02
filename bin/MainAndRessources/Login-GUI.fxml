@@ -78,7 +78,7 @@
                   </HBox>
                   <HBox style="-fx-border-color: white; -fx-background-radius: 0;">
                      <children>
-                        <Button fx:id="loginButton" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="32.0" prefWidth="507.0" style="-fx-background-color: #3500D3;" text="Login" textFill="WHITE">
+                        <Button fx:id="loginButton" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="32.0" prefWidth="507.0" styleClass="loginButton" stylesheets="@loginButtons.css" text="Login" textFill="WHITE">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -99,7 +99,29 @@
                   <Insets />
                </HBox.margin>
             </VBox>
-            <VBox prefWidth="250.0" style="-fx-background-color: #3500D3;" />
+            <VBox prefWidth="250.0" style="-fx-background-color: #3500D3;">
+               <children>
+                  <Pane prefHeight="140.0" prefWidth="250.0">
+                     <children>
+                        <Button fx:id="closeButton" layoutX="204.0" mnemonicParsing="false" onAction="#closeButtonAction" style="-fx-background-color: transparent;" styleClass="xButton" stylesheets="@loginButtons.css">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@X.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
          </children>
       </HBox>
    </children>

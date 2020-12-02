@@ -6,6 +6,7 @@ package Client;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import Client.massageCodes;
 import MainAndRessources.ChatBubble;
@@ -34,7 +35,19 @@ public class ApplicationController {
 	
 	private static boolean connecting = false;
 	Hash hash = new Hash();
-	
+
+	//Close Buttons
+	@FXML
+	public Button closeButton;
+
+	public void closeButtonAction(ActionEvent e){
+		e.consume();
+
+		System.out.println("Application closed");
+		System.exit(0);
+
+	}
+
 	//Login Buttons
 	@FXML
 	public Button registerButton;
@@ -74,7 +87,7 @@ public class ApplicationController {
 			
 			if (!connecting) {
 				connecting = true;
-				ClientMain.getClientConnecter().connect(serverAdressField.getText(), getServerPortTextField());
+				ClientMain.getClientConnecter().connect(/*serverAdressField.getText()*/ "127.0.0.1", /*getServerPortTextField()*/ 4444);
 			}		
 			
 			} catch (Exception e2) {
@@ -106,9 +119,7 @@ public class ApplicationController {
 			Thread.sleep(1000);
 			sendMassage.setDisable(false);
 		}
-		
-		addChatRoomToList(massageField.getText());
-			}
+				}
 	
 	//Login TextFields
 	@FXML
@@ -140,7 +151,7 @@ public class ApplicationController {
 	//Getter
 	public int getServerPortTextField() {
 		int ret = 4444;
-		if (serverPortField.getText().length() > 0) {
+		if (serverPortField.getText() != null) {
 			ret = Integer.parseInt(serverPortField.getText());
 		} else {
 			ret = 4444;
@@ -346,10 +357,18 @@ public class ApplicationController {
 		return chatRoomList;
 	}
 		
-		private ArrayList<Pane> chatRoomFxList = new ArrayList<Pane>();
+		private HashMap<Pane, Integer> chatRoomFxList = new HashMap<>();
 	
-	public void addChatRoomToList(String text) {
-		chatRoomList.getChildren().add(new ChatRoomFx().load(text));
+	public void addChatRoomToList(String text, int id) {
+		Pane chatRoomFx = new ChatRoomFx().load(text);
+
+		chatRoomFxList.put(chatRoomFx, id);
+
+		chatRoomList.getChildren().add(chatRoomFx);
+	}
+
+	public int getChatRoomID(Pane input){
+		return chatRoomFxList.get(input);
 	}
 
 }

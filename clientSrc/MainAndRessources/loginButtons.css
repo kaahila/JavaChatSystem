@@ -1,0 +1,19 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property
+ */
+ 
+ .xButton:hover {
+	-fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 1.5, 1, 0.0, 0.0 );
+ }
+ 
+ .loginButton {
+	 -fx-background-color:  #3500D3;
+	 
+	
+	-fx-transition: dropshadow 150ms ease-out;
+	
+ }
+ 
+.loginButton:hover{
+		-fx-effect: dropshadow(three-pass-box, rgba(255,255,255,0.5), 4, 1, 0, 0);
+
+}

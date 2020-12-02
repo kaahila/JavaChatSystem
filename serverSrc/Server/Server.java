@@ -9,6 +9,7 @@ import java.util.Vector;
 
 import com.sun.corba.se.impl.orbutil.StackImpl;
 
+import java.util.Scanner;
 import Server.Datenbank.DatenbankManager;
 import Server.FileManager.FileManager;
 import Server.ServerClient.ClientHandeler.ClientListener;

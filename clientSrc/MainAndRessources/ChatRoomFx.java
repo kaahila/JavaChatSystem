@@ -5,6 +5,7 @@ import com.mysql.cj.xdevapi.Client;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.Pane;
+import Client.massageCodes;
 import javafx.scene.shape.Circle;
 
 public class ChatRoomFx {
@@ -29,8 +30,11 @@ public class ChatRoomFx {
 
 		button.setOnMouseClicked(event ->
 		{
-			if (event.getButton() == MouseButton.PRIMARY){
 
+
+			if (event.getButton() == MouseButton.PRIMARY){
+				System.out.println("Button clicked "+ event.getButton());
+				ClientMain.getClientMassanger().sendMassage(massageCodes.CHANGECHATROOMREQUEST, String.valueOf(ClientMain.getController().getChatRoomID(root)));
 			}
 		});
 		

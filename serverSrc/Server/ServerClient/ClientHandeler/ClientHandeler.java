@@ -78,7 +78,7 @@ public class ClientHandeler extends Thread {
 		
 		massageCode = massageCodes.toEnum(reviced.substring(0, reviced.indexOf('#')));
 		
-		reviced = reviced.substring(reviced.indexOf('#'));
+		reviced = reviced.substring(reviced.indexOf('#')+1);
 		
 		/*if (accountHandler.getServerClient() == null && (massageCode != massageCodes.LOGINREQUEST || massageCode != massageCodes.REGISTERREQUEST)) {
 			return;
@@ -89,7 +89,7 @@ public class ClientHandeler extends Thread {
 				
 				charIndex = reviced.lastIndexOf('#');
 				
-				usernameString = reviced.substring(1, charIndex);
+				usernameString = reviced.substring(0, charIndex);
 				passwordString = reviced.substring(charIndex+1);
 				
 				System.out.println(""+usernameString);
@@ -101,7 +101,7 @@ public class ClientHandeler extends Thread {
 			case REGISTERREQUEST: //Register
 				charIndex = reviced.lastIndexOf('#');
 				
-				usernameString = reviced.substring(1, charIndex);
+				usernameString = reviced.substring(0, charIndex);
 				passwordString = reviced.substring(charIndex+1);
 				
 				System.out.println(""+usernameString);
@@ -115,8 +115,12 @@ public class ClientHandeler extends Thread {
 				break;
 				
 			case CHANGECHATROOMREQUEST: //Massage
-				
+
 				int id = Integer.parseInt(reviced);
+
+				System.out.println("[ClienHandeler | "+clientSocket+"] ChangeChatRoomRequest "+id);
+
+
 				
 				serverRoomsManager.changeRoom(id, this);
 				
@@ -148,7 +152,7 @@ public class ClientHandeler extends Thread {
 	
 	
 	public void sendMassage(massageCodes massageCode, String massage) {
-		System.out.println("[ClientHandeler] new Massage "+massage);
+		System.out.println("[ClientHandeler] new Massage "+massageCode.toString()+"#"+massage);
 		try {
 			switch (massageCode) {
 			case LOGINANSWER: //LoginServerAnswer
