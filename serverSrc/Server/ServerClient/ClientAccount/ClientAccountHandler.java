@@ -27,6 +27,7 @@ public class ClientAccountHandler {
 		
 		if (serverClient != null) {
 			retString = "true";
+			clientHandeler.firstConnect();
 			clientHandeler.connectToChatRoom(0);
 
 		} else {

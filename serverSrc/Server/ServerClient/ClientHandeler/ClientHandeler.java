@@ -212,7 +212,16 @@ public class ClientHandeler extends Thread {
 		
 		
 	}
-	
+	boolean firstConnect = true;
+	public void firstConnect(){
+		if(firstConnect){
+
+			Server.getServerRoomsManager().connectUserToChatRoom(this);
+
+			firstConnect = false;
+		}
+	}
+
 	public void connectToChatRoom(int index) {
 		ServerRoomsManager.getChatRooms().get(index).connectToRoom(this);
 

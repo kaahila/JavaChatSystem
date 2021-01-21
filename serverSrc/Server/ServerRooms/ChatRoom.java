@@ -18,6 +18,7 @@ public class ChatRoom {
 	public ChatRoom(int id, String name) {
 		if(name.length() >= 1) {
 		this.name = name;
+		this.id = id;
 		
 		for (ClientHandeler clientHandeler : ClientHandeler.getClientHandelers()) {
 			clientHandeler.sendMassage(massageCodes.CHATROOMCREATED, id+"#"+name);

@@ -48,7 +48,7 @@ public class Server {
 			System.exit(0);
 		}
 		
-		serverRoomsManager.createChatRoom("Main Room");
+
 	}
 	
 	//Getter

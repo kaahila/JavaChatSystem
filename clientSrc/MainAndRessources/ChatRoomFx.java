@@ -18,15 +18,18 @@ public class ChatRoomFx {
 	public Pane load(String text) {
 		Pane root = new Pane();
 
-		Circle ripple = new Circle();
+		//Circle ripple = new Circle();
 
-		ripple.getStyleClass().add("ripple");
 
-		Button button = new Button(text);
+
+		Button button = new Button();
+		button.getStylesheets().add("MainAndRessources/chatRoomButton.css");
+		button.getStyleClass().add("chatRoomButton");
+		//ripple.getStyleClass().add("ripple");
+		button.setText(text);
 		button.setMaxHeight(20);
 		button.setMaxWidth(ClientMain.getController().getChatRoomList().getWidth());
-		button.getStylesheets().add("chatRoomButton.css");
-		button.getStyleClass().add("chatRoomButton");
+
 
 		button.setOnMouseClicked(event ->
 		{

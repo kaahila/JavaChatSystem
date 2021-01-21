@@ -360,6 +360,8 @@ public class ApplicationController {
 		private HashMap<Pane, Integer> chatRoomFxList = new HashMap<>();
 	
 	public void addChatRoomToList(String text, int id) {
+
+		System.out.println("ChatRoomFx: "+text+" added");
 		Pane chatRoomFx = new ChatRoomFx().load(text);
 
 		chatRoomFxList.put(chatRoomFx, id);

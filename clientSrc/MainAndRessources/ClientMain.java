@@ -189,6 +189,8 @@ public class ClientMain extends Application {
 					ClientMain.scene.setRoot(loginPane);
 				}
 			});
+
+
 			break;
 
 		case 2:

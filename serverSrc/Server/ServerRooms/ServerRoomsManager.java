@@ -4,6 +4,7 @@ import java.util.Vector;
 
 import Server.ServerClient.ClientHandeler.ClientHandeler;
 import Server.ServerClient.ClientHandeler.massageCodes;
+import com.mysql.cj.xdevapi.Client;
 
 public class ServerRoomsManager {
 	
@@ -11,9 +12,13 @@ public class ServerRoomsManager {
 	
 	//Konstruktor
 	public ServerRoomsManager() {
+		createChatRoom("Main Room");
+		createChatRoom("sssss");
+		createChatRoom("Penis");
 	}
 	
 	public void createChatRoom(String name) {
+		System.out.println("Chatroom "+name +" created");
 		chatRooms.add(new ChatRoom(chatRooms.size(), name));
 		
 	}
@@ -25,7 +30,22 @@ public class ServerRoomsManager {
 			}
 		}
 	}*/
-	
+
+	public void connectUserToChatRoom(ClientHandeler client){
+		Thread t = new Thread(
+			new Runnable(){
+				@Override
+				public void run() {
+					System.out.println("LETS GOOOO");
+					for (ChatRoom chatRoom : chatRooms) {
+						client.sendMassage(massageCodes.CHATROOMCREATED, chatRoom.getId() + "#" + chatRoom.getName());
+					}
+
+				}
+			});
+		t.start();
+
+	}
 	
 	public void changeRoom(int id, ClientHandeler client) {
 		getChatRooms().get(id).connectToRoom(client);	

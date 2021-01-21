@@ -163,7 +163,7 @@ public class ClientMassanger extends Thread {
 
 				case CHATROOMCREATED:
 					int id = Integer.parseInt(reviced.substring(0, reviced.lastIndexOf('#')));
-					String text = reviced;
+					String text = reviced.substring(reviced.lastIndexOf("#")+1);
 					applicationController.addChatRoomToList(text, id);
 					break;
 			default:
