@@ -1,8 +1,9 @@
 package Server.Datenbank;
 
+import Server.Server;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
-import Server.Server;
 
 public class DatenbankChecker {
 
@@ -10,9 +11,9 @@ public class DatenbankChecker {
 	 * The Variables for the DatabaseChecker
 	 */
 	
-	private Connection mySqlConnection;
-	private String mySqlDatabaseName;
-	private String mySqlClientAccountTableName;
+	private final Connection mySqlConnection;
+	private final String mySqlDatabaseName;
+	private final String mySqlClientAccountTableName;
 		
 	public DatenbankChecker(Connection connection) {
 		mySqlConnection = connection;

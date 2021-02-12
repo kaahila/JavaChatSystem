@@ -57,7 +57,7 @@ public class Hash {
 				} else {
 					
 					
-					passArr[p] = (int)charArr[c];
+					passArr[p] = charArr[c];
 					c++;
 					
 					if (teiler>0 && charArr.length > c ) {
@@ -137,7 +137,7 @@ public class Hash {
 			summeAlles += passArr[i];
 		}
 
-		summeAlles = (int)Math.sqrt((double)summeAlles);
+		summeAlles = (int)Math.sqrt(summeAlles);
 		
 		mixMenge = summeAlles%3;
 	

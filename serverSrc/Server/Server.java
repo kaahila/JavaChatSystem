@@ -1,20 +1,11 @@
 package Server;
 
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.util.ArrayList;
-import java.util.Vector;
-
-import com.sun.corba.se.impl.orbutil.StackImpl;
-
-import java.util.Scanner;
 import Server.Datenbank.DatenbankManager;
 import Server.FileManager.FileManager;
 import Server.ServerClient.ClientHandeler.ClientListener;
-import Server.ServerRooms.ChatRoom;
 import Server.ServerRooms.ServerRoomsManager;
+
+import java.net.ServerSocket;
 
 
 
@@ -24,10 +15,10 @@ public class Server {
 	private static int port;
 	private static String hostname;
 	
-	private static FileManager fileManager = new FileManager();
-	private static ServerRoomsManager serverRoomsManager = new ServerRoomsManager();
+	private static final FileManager fileManager = new FileManager();
+	private static final ServerRoomsManager serverRoomsManager = new ServerRoomsManager();
 	private static ServerSocket server;
-	private static DatenbankManager datenbankManager = new DatenbankManager();
+	private static final DatenbankManager datenbankManager = new DatenbankManager();
 	
 	public static void main(String[] args) {
 		

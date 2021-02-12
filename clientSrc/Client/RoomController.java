@@ -1,8 +1,5 @@
 package Client;
 
-import java.util.ArrayList;
-import java.util.Vector;
-
 import MainAndRessources.ClientMain;
 
 
@@ -24,6 +21,7 @@ public class RoomController {
 					
 			
 			ClientMain.getClientMassanger().sendMassage(massageCodes.CHANGECHATROOMREQUEST, massage);
+
 		}
 		
 	}

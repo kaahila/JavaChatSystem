@@ -1,18 +1,14 @@
 package MainAndRessources;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
-import javafx.scene.control.SplitPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.transform.Translate;
+
+import java.io.IOException;
 
 public class ChatBubble {
-	private  FXMLLoader fxmlLoader = new FXMLLoader();
-	private ChatBubbleController chatBubbleController = new ChatBubbleController();
+	private final FXMLLoader fxmlLoader = new FXMLLoader();
+	private final ChatBubbleController chatBubbleController = new ChatBubbleController();
 	private Pane pane = new Pane();
 	private static GridPane bubblesGroup;	
 	
@@ -24,8 +20,8 @@ public class ChatBubble {
 			
 			
 			
-			pane = (Pane)fxmlLoader.load();
-			
+			pane = fxmlLoader.load();
+			pane.maxWidth(30);
 			
 			
 			chatBubbleController.setNameText(usernameText);

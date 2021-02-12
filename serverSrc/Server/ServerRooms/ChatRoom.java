@@ -1,10 +1,10 @@
 package Server.ServerRooms;
 
-import java.util.Vector;
-
 import Server.ServerClient.ClientAccount.ServerClient;
 import Server.ServerClient.ClientHandeler.ClientHandeler;
 import Server.ServerClient.ClientHandeler.massageCodes;
+
+import java.util.Vector;
 
 public class ChatRoom {
 	
@@ -12,7 +12,7 @@ public class ChatRoom {
 	private String name = "";
 	private int id;
 	
-	private Vector<ClientHandeler> clientsInRoom = new Vector<ClientHandeler>();
+	private final Vector<ClientHandeler> clientsInRoom = new Vector<ClientHandeler>();
 	
 	//Konstruktor
 	public ChatRoom(int id, String name) {
@@ -37,13 +37,15 @@ public class ChatRoom {
 	}
 	
 	public void newMassageInput(ServerClient user, String input) {
-		input = user.getUsernameString()+input;
-		
+		input = user.getUsernameString()+"#"+input;
+		System.out.println("New Massage: "+input);
 		if (clientsInRoom.size() >= 2) {
 		for (ClientHandeler clientHandeler : clientsInRoom) {
+
 			if (clientHandeler.getAccountHandler().getServerClient() != user) {
 				clientHandeler.sendMassage(massageCodes.SENDTEXTMASSAGETOCLIENT, input);
 			}
+
 		}
 		} else {
 			return;
@@ -59,6 +61,7 @@ public class ChatRoom {
 		System.out.println("[ClientRoom, "+ name +"] Client "+ client.getAccountHandler().getServerClient().getUsernameString() +" connectet");
 		clientsInRoom.add(client);
 		client.setAktuelleChatRoom(this);
+		client.sendMassage(massageCodes.CHANGECHATROOMANSWER, "true");
 	}
 	
 	/*
@@ -69,9 +72,7 @@ public class ChatRoom {
 		if (client.getAktuelleChatRoom() == null) {
 			return;
 		}
-		if (client.getAktuelleChatRoom().getClientsInRoom().contains(client)) {
-			client.getAktuelleChatRoom().getClientsInRoom().remove(client);
-		}
+		client.getAktuelleChatRoom().getClientsInRoom().remove(client);
 		
 	}
 	

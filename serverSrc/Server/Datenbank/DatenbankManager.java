@@ -1,11 +1,12 @@
 package Server.Datenbank;
 
+import Server.Server;
+import Server.ServerClient.ClientAccount.ServerClient;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import Server.Server;
-import Server.ServerClient.ClientAccount.ServerClient;
 
 public class DatenbankManager {
 	
@@ -17,14 +18,14 @@ public class DatenbankManager {
 	
 	private Connection mysqlConnection;
 	
-	private String hostAdress;
-	private String port;
+	private final String hostAdress;
+	private final String port;
 	
-	private String username;
-	private String password;
+	private final String username;
+	private final String password;
 	
-	private String databaseName;
-	private String userTabelName;
+	private final String databaseName;
+	private final String userTabelName;
 	
 	public DatenbankManager() {
 		hostAdress = Server.getFileManager().getMySqlHostadress();
@@ -61,11 +62,8 @@ public class DatenbankManager {
 	}
 	
 	private boolean isConnected() {
-		if (mysqlConnection != null) {
-			return true;
-		}
-		return false;
-	}
+        return mysqlConnection != null;
+    }
 	
 	public ServerClient loginUser(String[] userInput) {
 		

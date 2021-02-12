@@ -42,7 +42,7 @@ public enum massageCodes {
 	
 	//Construktor
 	private final String massage;
-	private massageCodes(final String massage) {
+	massageCodes(final String massage) {
 		this.massage = massage;
 	}
 	

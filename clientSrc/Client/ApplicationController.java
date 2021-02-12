@@ -1,14 +1,6 @@
 package Client;
 
 
-
-
-
-
-import java.util.ArrayList;
-import java.util.HashMap;
-
-import Client.massageCodes;
 import MainAndRessources.ChatBubble;
 import MainAndRessources.ChatBubbleMode;
 import MainAndRessources.ChatRoomFx;
@@ -16,19 +8,13 @@ import MainAndRessources.ClientMain;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.geometry.HPos;
-import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+
+import java.util.HashMap;
 
 
 public class ApplicationController {
@@ -87,7 +73,7 @@ public class ApplicationController {
 			
 			if (!connecting) {
 				connecting = true;
-				ClientMain.getClientConnecter().connect(/*serverAdressField.getText()*/ "127.0.0.1", /*getServerPortTextField()*/ 4444);
+				ClientMain.getClientConnecter().connect(getServerAdressTextField(), getServerPortTextField());
 			}		
 			
 			} catch (Exception e2) {
@@ -152,9 +138,15 @@ public class ApplicationController {
 	public int getServerPortTextField() {
 		int ret = 4444;
 		if (serverPortField.getText() != null) {
-			ret = Integer.parseInt(serverPortField.getText());
-		} else {
-			ret = 4444;
+			//ret = Integer.parseInt(serverPortField.getText());
+		}
+		return ret;
+	}
+
+	public String getServerAdressTextField() {
+		String ret = "127.0.0.1";
+		if (serverPortField.getText() != null) {
+			//ret = serverAdressField.getText();
 		}
 		return ret;
 	}
@@ -320,7 +312,7 @@ public class ApplicationController {
 		if (massage.length() >= 1) {		
 			Platform.runLater(new Runnable() {
 	
-				ChatBubble chatBubble = new ChatBubble(chatBubbleMode, username, massage);
+				final ChatBubble chatBubble = new ChatBubble(chatBubbleMode, username, massage);
 				
 				@Override
 				public void run() {
@@ -357,16 +349,27 @@ public class ApplicationController {
 		return chatRoomList;
 	}
 		
-		private HashMap<Pane, Integer> chatRoomFxList = new HashMap<>();
+		private final HashMap<Button, Integer> chatRoomFxList = new HashMap<>();
 	
 	public void addChatRoomToList(String text, int id) {
 
 		System.out.println("ChatRoomFx: "+text+" added");
-		Pane chatRoomFx = new ChatRoomFx().load(text);
+		Button chatRoomFx = new ChatRoomFx().load(text);
 
 		chatRoomFxList.put(chatRoomFx, id);
 
 		chatRoomList.getChildren().add(chatRoomFx);
+	}
+
+	public void clearChat(){
+		System.out.println("ClearChat()");
+		Platform.runLater(new Runnable() {
+			@Override
+			public void run() {
+				massagePane.getChildren().remove(0, massagePane.getChildren().size());
+			}
+		});
+
 	}
 
 	public int getChatRoomID(Pane input){

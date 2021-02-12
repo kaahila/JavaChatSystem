@@ -1,14 +1,13 @@
 package Server.ServerRooms;
 
-import java.util.Vector;
-
 import Server.ServerClient.ClientHandeler.ClientHandeler;
 import Server.ServerClient.ClientHandeler.massageCodes;
-import com.mysql.cj.xdevapi.Client;
+
+import java.util.Vector;
 
 public class ServerRoomsManager {
 	
-	private static Vector<ChatRoom> chatRooms = new Vector<ChatRoom>();
+	private static final Vector<ChatRoom> chatRooms = new Vector<ChatRoom>();
 	
 	//Konstruktor
 	public ServerRoomsManager() {

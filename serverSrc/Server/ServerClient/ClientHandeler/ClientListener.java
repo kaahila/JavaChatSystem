@@ -1,14 +1,12 @@
 package Server.ServerClient.ClientHandeler;
-import Server.*;
-
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
 
 import Server.Server;
 import Server.ServerMassanger;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
 
 public class ClientListener extends Thread{
 	
@@ -20,11 +18,11 @@ public class ClientListener extends Thread{
 	private DataInputStream inputStream;
 	private DataOutputStream outputStream;
 	
-	private static ServerMassanger massanger = new ServerMassanger(serverSocket);
+	private static final ServerMassanger massanger = new ServerMassanger(serverSocket);
 	
 	
 	public ClientListener(ServerSocket newServerSocket) {
-		this.serverSocket = newServerSocket;
+		serverSocket = newServerSocket;
 	}
 	
 	

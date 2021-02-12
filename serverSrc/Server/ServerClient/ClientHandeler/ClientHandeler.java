@@ -1,23 +1,23 @@
 package Server.ServerClient.ClientHandeler;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.net.Socket;
-import java.util.Vector;
-
 
 import Server.Server;
 import Server.ServerClient.ClientAccount.ClientAccountHandler;
 import Server.ServerRooms.ChatRoom;
 import Server.ServerRooms.ServerRoomsManager;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
+import java.util.Vector;
+
 public class ClientHandeler extends Thread {
 	
-	private ServerRoomsManager serverRoomsManager = Server.getServerRoomsManager();
-	private Socket clientSocket;
-	private DataInputStream input;
-	private DataOutputStream output;
-	private ClientAccountHandler accountHandler;
+	private final ServerRoomsManager serverRoomsManager = Server.getServerRoomsManager();
+	private final Socket clientSocket;
+	private final DataInputStream input;
+	private final DataOutputStream output;
+	private final ClientAccountHandler accountHandler;
 	
 	private String revicedString;
 	private massageCodes massageCode;
@@ -25,7 +25,7 @@ public class ClientHandeler extends Thread {
 	private String usernameString;
 	private String passwordString;
 	
-	private static Vector<ClientHandeler> clientHandelers = new Vector<ClientHandeler>();
+	private static final Vector<ClientHandeler> clientHandelers = new Vector<ClientHandeler>();
 	
 	private int charIndex;
 	

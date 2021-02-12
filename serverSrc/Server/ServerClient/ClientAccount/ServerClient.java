@@ -1,17 +1,16 @@
 package Server.ServerClient.ClientAccount;
 
-import java.util.Vector;
-
-import Server.ServerClient.Hash;
 import Server.ServerRooms.ChatRoom;
+
+import java.util.Vector;
 
 public class ServerClient {
 	
-	private String usernameString;
+	private final String usernameString;
 	private ChatRoom chatRoom;
 	
 	
-	private static Vector<ServerClient> clients = new Vector<ServerClient>();
+	private static final Vector<ServerClient> clients = new Vector<ServerClient>();
 	
 	
 	public ServerClient(String inputUsernameString) {

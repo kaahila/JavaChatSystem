@@ -22,6 +22,7 @@ public class ChatBubbleController {
 	public void setMassageText(String text) {
 		if (text.length() > 0) {
 			massageText.setText(text);
+			massageText.setWrapText(true);
 		}
 	}
 		

@@ -1,15 +1,15 @@
 package Server.ServerClient.ClientAccount;
 
-import Server.Server;
 import Server.Datenbank.DatenbankManager;
-import Server.ServerClient.Hash;
+import Server.Server;
 import Server.ServerClient.ClientHandeler.ClientHandeler;
 import Server.ServerClient.ClientHandeler.massageCodes;
+import Server.ServerClient.Hash;
 
 public class ClientAccountHandler {
 	private ServerClient serverClient;
 	private final ClientHandeler clientHandeler;
-	private DatenbankManager datenbankManager = Server.getDatenbankManager();	
+	private final DatenbankManager datenbankManager = Server.getDatenbankManager();
 	
 	public ClientAccountHandler(ClientHandeler clientHandeler) {
 	    this.clientHandeler = clientHandeler;

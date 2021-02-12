@@ -1,24 +1,21 @@
 package Client;
 
+import MainAndRessources.ChatBubbleMode;
+import MainAndRessources.ClientMain;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.ServerSocket;
 import java.net.Socket;
-import Client.massageCodes;
-import MainAndRessources.ChatBubbleMode;
-import MainAndRessources.ClientMain;
 
 
 public class ClientMassanger extends Thread {
 	private DataInputStream input;
 	private DataOutputStream output;
 	
-	private ApplicationController applicationController;
+	private final ApplicationController applicationController;
 	
-	private Socket clientSocket;
+	private final Socket clientSocket;
 	
 	private String revicedString;
 	private String outputString;
@@ -158,7 +155,13 @@ public class ClientMassanger extends Thread {
 				break;
 				
 			case CHANGECHATROOMANSWER:
-					
+
+				if (reviced.contains("true")) {
+					System.out.println("ChangeChatRoomAnswer True");
+					ClientMain.getController().clearChat();
+				} else {
+					System.out.println("ChangeChatRoomAnswer False");
+				}
 				break;
 
 				case CHATROOMCREATED:

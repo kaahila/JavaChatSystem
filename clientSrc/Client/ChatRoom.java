@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class ChatRoom {
 	
-	private static ArrayList<ChatRoom> chatRooms = new ArrayList<ChatRoom>();
+	private static final ArrayList<ChatRoom> chatRooms = new ArrayList<ChatRoom>();
 	
-	private String name;
-	private int id;
+	private final String name;
+	private final int id;
 	
 	public ChatRoom(String name, int id) {
 		this.name = name;
