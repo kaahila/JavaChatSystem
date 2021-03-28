@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.PreparedStatement;
 
 public class DatenbankManager {
 	
@@ -17,7 +18,8 @@ public class DatenbankManager {
 	DatenbankChecker datenbankChecker;
 	
 	private Connection mysqlConnection;
-	
+
+
 	private final String hostAdress;
 	private final String port;
 	
@@ -41,7 +43,8 @@ public class DatenbankManager {
 			mysqlConnection = DriverManager.getConnection("jdbc:mysql://"
 							+ hostAdress + ":" + port + "/?serverTimezone=UTC",
 								username, password);
-			
+
+
 			if (isConnected()) {
 				datenbankChecker = new DatenbankChecker(mysqlConnection);
 				mysqlConnection.close();
@@ -78,9 +81,10 @@ public class DatenbankManager {
 		try {
 			mysqlConnection = DriverManager.getConnection("jdbc:mysql://" + hostAdress + ":" + port +
 									"/" + databaseName + "?serverTimezone=UTC", username, password);
-			
-			ResultSet resultSet = mysqlConnection.createStatement().executeQuery("SELECT * FROM "+userTabelName+" WHERE username='"+usernameInput+"'");
-			
+
+			PreparedStatement ps = mysqlConnection.prepareStatement("SELECT * FROM "+userTabelName+" WHERE username='"+usernameInput+"'");
+			ResultSet resultSet = ps.executeQuery();
+
 				if (resultSet.next() && resultSet.getString(1).equalsIgnoreCase(usernameInput)) {
 					usernameAvailable = true;				
 			}
@@ -94,6 +98,7 @@ public class DatenbankManager {
 				}
 				
 			}
+			ps.close();
 			resultSet.close();
 			mysqlConnection.close();
 		} catch (SQLException e) {
@@ -114,9 +119,9 @@ public class DatenbankManager {
 		try {
 			mysqlConnection = DriverManager.getConnection("jdbc:mysql://" + hostAdress + ":" + port + 
 									"/" + databaseName + "?serverTimezone=UTC", username, password);
-			
-			ResultSet resultSet = mysqlConnection.createStatement().executeQuery("SELECT username FROM "+userTabelName+" WHERE username='"+usernameInput+"'");
-			
+			PreparedStatement ps = mysqlConnection.prepareStatement("SELECT username FROM "+userTabelName+" WHERE username='"+usernameInput+"'");
+			ResultSet resultSet = ps.executeQuery();
+
 				if (resultSet.next() && resultSet.getString(1).equalsIgnoreCase(usernameInput)) {
 					usernameAvailable = false;
 					
@@ -130,12 +135,14 @@ public class DatenbankManager {
 																"(username, password) VALUES ('"+usernameInput+"', '"+passwordInput+"')");
 				System.out.println("[DatenbankManager] user added");
 				ret = true;
-				
+
+
 			} else {
 				System.out.println("[DatenbankManager] the username is used");
 				ret = false;
 			}
-			
+
+			ps.close();
 			resultSet.close();
 			mysqlConnection.close();
 		} catch (SQLException e) {

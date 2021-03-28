@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bf54f0cd-8c2d-4f3e-af26-99228969d8bb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/bin/Client/ApplicationController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Client/ApplicationController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Client/ApplicationController$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Client/ApplicationController$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Client/ApplicationController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Client/ApplicationController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Client/ApplicationController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Client/ApplicationController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Client/ApplicationController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Client/ApplicationController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Client/ApplicationController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Client/ApplicationController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Client/ApplicationController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Client/ApplicationController$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Client/ApplicationController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Client/ApplicationController$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Client/ApplicationController$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Client/ApplicationController$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Client/ApplicationController$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Client/ApplicationController$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Client/ApplicationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Client/ApplicationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Client/ClientMassanger.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Client/ClientMassanger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/MainAndRessources/ChatRoomFx.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/MainAndRessources/ChatRoomFx.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/MainAndRessources/ClientMain$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/MainAndRessources/ClientMain$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/MainAndRessources/ClientMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/MainAndRessources/ClientMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/MainAndRessources/Scene1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/MainAndRessources/Scene1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Server/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Server/ServerClient/ClientAccount/ClientAccountHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Server/ServerClient/ClientAccount/ClientAccountHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Server/ServerClient/ClientHandeler/ClientHandeler.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Server/ServerClient/ClientHandeler/ClientHandeler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Server/ServerRooms/ChatRoom.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Server/ServerRooms/ChatRoom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Server/ServerRooms/ServerRoomsManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Server/ServerRooms/ServerRoomsManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientSrc/Client/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientSrc/Client/ApplicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientSrc/Client/ClientMassanger.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientSrc/Client/ClientMassanger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientSrc/MainAndRessources/ChatRoomFx.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientSrc/MainAndRessources/ChatRoomFx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientSrc/MainAndRessources/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientSrc/MainAndRessources/ClientMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientSrc/MainAndRessources/Scene1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/clientSrc/MainAndRessources/Scene1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverSrc/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverSrc/Server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverSrc/Server/ServerClient/ClientAccount/ClientAccountHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverSrc/Server/ServerClient/ClientAccount/ClientAccountHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverSrc/Server/ServerClient/ClientHandeler/ClientHandeler.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverSrc/Server/ServerClient/ClientHandeler/ClientHandeler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverSrc/Server/ServerRooms/ChatRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverSrc/Server/ServerRooms/ChatRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverSrc/Server/ServerRooms/ServerRoomsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverSrc/Server/ServerRooms/ServerRoomsManager.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="UML MindMap" />
+        <option value="UML Sequence" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1kVAc4JQaX7Mt0IPAN7gHbHraKL" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultPlantUmlFileTemplate" value="UML Sequence" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunManager" selected="Application.ClientMain">
+    <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainAndRessources.ClientMain" />
+      <module name="JavaProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="MainAndRessources.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server.Server" />
+      <module name="JavaProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ClientMain" />
+        <item itemvalue="Application.Server" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bf54f0cd-8c2d-4f3e-af26-99228969d8bb" name="Default Changelist" comment="" />
+      <created>1605775487736</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605775487736</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="465" y="0" key="#General" timestamp="1606297258616">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="0" key="#General/0.0.1536.824@0.0.1536.824" timestamp="1606297258616" />
+    <state x="249" y="0" key="#Project_Structure" timestamp="1605775573665">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="249" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1605775573665" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605775675200">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1605775675200" />
+    <state x="549" y="129" key="FileChooserDialogImpl" timestamp="1605779932350">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="129" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605779932350" />
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1607595342934">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607595342934" />
+    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1607595342933">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607595342933" />
+    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1607595342933">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607595342933" />
+    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1607595342934">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607595342934" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1607595342934">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607595342934" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1607595342934">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1607595342934" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1607595342934">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1607595342934" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1607595342934">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1607595342934" />
+    <state x="439" y="116" key="NewModule_or_Project.wizard" timestamp="1605779901775">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="439" y="116" key="NewModule_or_Project.wizard/0.0.1536.824@0.0.1536.824" timestamp="1605779901775" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1607594021585">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607594021585" />
+    <state x="335" y="141" width="865" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1607593599892">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="335" y="141" width="865" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824@0.0.1536.824" timestamp="1607593599892" />
+    <state x="418" y="44" key="new project wizard" timestamp="1605779815588">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="418" y="44" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1605779815588" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1606297038795">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1606297038795" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/serverSrc/Server/ServerRooms/ServerRoomsManager.java</url>
+          <line>33</line>
+          <properties class="Server.ServerRooms.ServerRoomsManager" method="connectUserToChatRoom">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -49,7 +49,8 @@ public class ClientAccountHandler {
 		if(datenbankManager.addUserToDatabase(userInput)) {
 			
 				retString = "true";
-				clientHandeler.connectToChatRoom(0);
+				System.out.println("[AccountHandler] connecting new User to ChatRoom");
+				login(username,  passwordHash);
 		} else {
 			
 			retString = "false";

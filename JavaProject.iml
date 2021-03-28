@@ -37,5 +37,7 @@
       </library>
     </orderEntry>
     <orderEntry type="inheritedJdk" />
+    <orderEntry type="library" name="mysql-connector-java-8.0.22" level="project" />
+    <orderEntry type="library" name="org.eclipse.fx.fxml.compiler_1.1.0-SNAPSHOT" level="project" />
   </component>
 </module>
