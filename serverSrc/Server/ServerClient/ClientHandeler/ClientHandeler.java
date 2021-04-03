@@ -56,12 +56,11 @@ public class ClientHandeler extends Thread {
 				e.printStackTrace();
 				try {
 					if (!clientSocket.isConnected()) {
-						getAktuelleChatRoom().disconnectFromRoom(this);
 						input.close();
 						output.close();
 						clientSocket.close();
 					}
-					
+					Server.getServerRoomsManager().disconnectUser(this);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

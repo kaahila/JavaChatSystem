@@ -27,7 +27,9 @@ public class ServerRoomsManager {
 			}
 		}
 	}
-	
+
+
+
 	/*public void removeChatRoom(int id) {
 		for (ClientHandeler clientHandeler : chatRooms.get(id).getClientsInRoom()) {
 			if (clientHandeler.getAccountHandler().getServerClient() != user) {
@@ -53,6 +55,11 @@ public class ServerRoomsManager {
 			});
 		t.start();
 
+	}
+
+	//Disconnect User from Server
+	public void disconnectUser(ClientHandeler client){
+		users.remove(client);
 	}
 
 	//Sending Massage to Users
