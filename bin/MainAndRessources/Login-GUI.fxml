@@ -70,9 +70,9 @@
                         <Insets left="50.0" right="50.0" top="10.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox prefWidth="343.0">
+                  <HBox prefWidth="343.0" style="-fx-background-color: #ffff;">
                      <children>
-                        <Label fx:id="connectionLable" textFill="WHITE">
+                        <Label fx:id="loginLabel" textFill="WHITE">
                            <font>
                               <Font name="Arial" size="12.0" />
                            </font>
@@ -188,6 +188,18 @@
                      </children>
                      <VBox.margin>
                         <Insets left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefWidth="343.0" style="-fx-background-color: #ffff;">
+                     <children>
+                        <Label fx:id="connectionLable" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="5.0" />
                      </VBox.margin>
                   </HBox>
                </children>

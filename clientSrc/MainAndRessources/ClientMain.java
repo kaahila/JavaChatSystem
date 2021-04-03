@@ -123,7 +123,7 @@ public class ClientMain extends Application {
   private AnchorPane loadScene1() {
     AnchorPane ret = null;
     try {
-    scene1Loader.setLocation(getClass().getResource("Scene1.fxml"));
+    scene1Loader.setLocation(getClass().getResource("Massage-GUI.fxml"));
     scene1Loader.setController(controller);
     
     ret = scene1Loader.load();

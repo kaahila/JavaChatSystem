@@ -56,6 +56,7 @@ public class ClientHandeler extends Thread {
 				e.printStackTrace();
 				try {
 					if (!clientSocket.isConnected()) {
+						getAktuelleChatRoom().disconnectFromRoom(this);
 						input.close();
 						output.close();
 						clientSocket.close();
@@ -79,7 +80,7 @@ public class ClientHandeler extends Thread {
 		massageCode = massageCodes.toEnum(reviced.substring(0, reviced.indexOf('#')));
 		
 		reviced = reviced.substring(reviced.indexOf('#')+1);
-		
+
 		/*if (accountHandler.getServerClient() == null && (massageCode != massageCodes.LOGINREQUEST || massageCode != massageCodes.REGISTERREQUEST)) {
 			return;
 		}*/
@@ -111,7 +112,11 @@ public class ClientHandeler extends Thread {
 				break;
 				
 			case SENDTEXTMASSAGETOSERVER: //Massage
-				this.aktuelleChatRoom.addMassageToChatRoom(accountHandler.getServerClient() , reviced);
+				System.out.println("[ClientHandler]: New Massage Reviced: "+reviced);
+				int chatRoomId = Integer.parseInt(reviced.substring(0,reviced.indexOf('#')));
+				reviced = reviced.substring(reviced.indexOf('#')+1);
+
+				Server.getServerRoomsManager().sendMessage(this.getAccountHandler().getServerClient().getUsernameString() , chatRoomId, reviced, this);
 				break;
 				
 			case CHANGECHATROOMREQUEST: //Massage
@@ -187,7 +192,7 @@ public class ClientHandeler extends Thread {
 			
 			this.output.writeUTF(massage);
 			
-		} catch (IOException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("[ClientHandeler] ClientMassanger Error: "+clientSocket);
 			e.printStackTrace();

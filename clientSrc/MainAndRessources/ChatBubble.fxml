@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-<Pane minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #000000; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
+<Pane minHeight="60.0" minWidth="120.0" style="-fx-background-color: #282828; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="nameText" layoutX="14.0" layoutY="6.0" text="Text" textFill="WHITE" textOverrun="CLIP">
+      <Label fx:id="nameText" layoutX="14.0" layoutY="6.0" text="Text" textFill="#e6e6e6" textOverrun="CLIP">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="massageText" layoutX="14.0" layoutY="34.0" maxWidth="-Infinity" prefHeight="25.0" prefWidth="125.0" text="Text" textAlignment="RIGHT" textFill="WHITE" textOverrun="CLIP">
+      <Label fx:id="massageText" layoutX="14.0" layoutY="34.0" maxWidth="-Infinity" prefHeight="25.0" prefWidth="125.0" text="Text" textAlignment="RIGHT" textFill="#e6e6e6" textOverrun="CLIP">
          <font>
             <Font name="Arial" size="14.0" />
          </font>

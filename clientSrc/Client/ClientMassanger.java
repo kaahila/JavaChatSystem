@@ -85,9 +85,9 @@ public class ClientMassanger extends Thread {
 				
 			case SENDTEXTMASSAGETOSERVER: //Massage
 				
-				applicationController.addMassage(ChatBubbleMode.SENDBYME,"Me" ,massage);
+				applicationController.addMassage(ChatBubbleMode.SENDBYME,"Me" ,massage, ClientMain.getController().getCurrentRoomID());
 
-				massage = massageCode.toString()+"#"+massage;
+				massage = massageCode.toString()+"#"+ClientMain.getController().getCurrentRoomID()+"#"+massage;
 				
 				break;
 				
@@ -147,18 +147,23 @@ public class ClientMassanger extends Thread {
 				
 						
 			case SENDTEXTMASSAGETOCLIENT: //ReviceMassage
-				int index = reviced.lastIndexOf('#');
-				
-				System.out.println("[ClientMassanger] New Massage reviced");
 
-				applicationController.addMassage(ChatBubbleMode.SENDBYANOTHERUSER ,reviced.substring(1, index), reviced.substring(index+1));
+				
+				System.out.println("[ClientMassanger] New Massage reviced: "+ reviced);
+
+				String username = reviced.substring(0,reviced.indexOf('#'));
+				reviced = reviced.substring(reviced.indexOf('#')+1);
+				int roomId = Integer.parseInt(reviced.substring(0,reviced.indexOf('#')));
+
+				String massage = reviced.substring(reviced.indexOf('#')+1);
+				applicationController.addMassage(ChatBubbleMode.SENDBYANOTHERUSER ,username, massage, roomId);
 				break;
 				
 			case CHANGECHATROOMANSWER:
 
 				if (reviced.contains("true")) {
 					System.out.println("ChangeChatRoomAnswer True");
-					ClientMain.getController().clearChat();
+					//ClientMain.getController().clearChat();
 				} else {
 					System.out.println("ChangeChatRoomAnswer False");
 				}

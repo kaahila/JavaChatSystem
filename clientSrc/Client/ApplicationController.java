@@ -8,6 +8,7 @@ import MainAndRessources.ClientMain;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -15,6 +16,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
 import java.util.HashMap;
+import java.util.Vector;
 
 
 public class ApplicationController {
@@ -137,17 +139,20 @@ public class ApplicationController {
 	//Getter
 	public int getServerPortTextField() {
 		int ret = 4444;
-		if (serverPortField.getText() != null) {
-			//ret = Integer.parseInt(serverPortField.getText());
+		if (!(serverPortField.getText().trim().isEmpty() || serverPortField.getText() == null )) {
+			ret = Integer.parseInt(serverPortField.getText().trim());
 		}
+		System.out.println(""+ret);
 		return ret;
 	}
 
 	public String getServerAdressTextField() {
 		String ret = "127.0.0.1";
-		if (serverPortField.getText() != null) {
-			//ret = serverAdressField.getText();
+		if (!(serverAdressField.getText().trim().isEmpty() || serverAdressField.getText() == null )){
+			ret = serverAdressField.getText().trim();
+
 		}
+		System.out.println(ret);
 		return ret;
 	}
 	
@@ -308,24 +313,31 @@ public class ApplicationController {
 	private static int rowIndex = 0;
 	
 	//TextArea Controlls	
-	public void addMassage(ChatBubbleMode chatBubbleMode ,String username, String massage) {
+	public void addMassage(ChatBubbleMode chatBubbleMode ,String username, String massage, int roomId) {
 		if (massage.length() >= 1) {		
 			Platform.runLater(new Runnable() {
 	
 				final ChatBubble chatBubble = new ChatBubble(chatBubbleMode, username, massage);
-				
+
+				ScrollPane s = (ScrollPane)getTabById(roomId).getContent();
+				GridPane g = (GridPane)s.getContent();
+
+
+
 				@Override
 				public void run() {
-					
+
+
+
 						switch (chatBubbleMode) {
 						case SENDBYME:
 						
-							massagePane.add(chatBubble.getBubble(), 1, rowIndex);
+							g.add(chatBubble.getBubble(), 1, rowIndex);
 							
 							rowIndex++;
 							break;
 						case SENDBYANOTHERUSER:
-							massagePane.add(chatBubble.getBubble(), 0, rowIndex);
+							g.add(chatBubble.getBubble(), 0, rowIndex);
 							rowIndex++;
 
 							break;
@@ -344,21 +356,25 @@ public class ApplicationController {
 	
 	@FXML
 	VBox chatRoomList;
-	
+
+	@FXML
+	TabPane tabPane;
+
 	public VBox getChatRoomList() {
 		return chatRoomList;
 	}
 		
-		private final HashMap<Button, Integer> chatRoomFxList = new HashMap<>();
+		private final Vector<Tab> tabList= new Vector<Tab>();
 	
 	public void addChatRoomToList(String text, int id) {
 
 		System.out.println("ChatRoomFx: "+text+" added");
-		Button chatRoomFx = new ChatRoomFx().load(text);
+		Tab t = new ChatRoomFx().load(text);
+		tabPane.getTabs().add(t);
 
-		chatRoomFxList.put(chatRoomFx, id);
+		tabList.add(t);
 
-		chatRoomList.getChildren().add(chatRoomFx);
+
 	}
 
 	public void clearChat(){
@@ -372,8 +388,22 @@ public class ApplicationController {
 
 	}
 
-	public int getChatRoomID(Pane input){
-		return chatRoomFxList.get(input);
+
+	public Tab getTabById(int id){
+		Tab ret = null;
+		ret = tabList.get(id);
+		return ret;
 	}
 
+	public int getCurrentRoomID(){
+		int ret = 0;
+		try {
+			Tab t = tabPane.getSelectionModel().getSelectedItem();
+			ret = tabList.indexOf(t);
+			System.out.println("[Controller]: getCurrentRoomID: " + ret);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return ret;
+	}
 }

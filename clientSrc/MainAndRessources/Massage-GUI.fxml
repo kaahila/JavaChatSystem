@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane style="-fx-background-color: #282828;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="550.0" style="-fx-border-color: #000000;">
+         <children>
+            <TextField fx:id="massageField" layoutX="27.0" layoutY="545.0" prefHeight="30.0" prefWidth="400.0" promptText="Massage" style="-fx-background-color: #3c3c3c; -fx-font-weight: bold; -fx-prompt-text-fill: #e6e6e6; -fx-text-fill: #e6e6e6;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+            <Button fx:id="sendMassage" layoutX="457.0" layoutY="545.0" mnemonicParsing="false" onAction="#sendMassageAction" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: #3c3c3c; -fx-font-weight: bold;" text="Send" textFill="#e6e6e6">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <TabPane fx:id="tabPane" layoutX="21.0" layoutY="14.0" prefHeight="500.0" prefWidth="500.0" stylesheets="@Massage-GUI.css" tabClosingPolicy="UNAVAILABLE" />
+         </children>
+      </AnchorPane>
+      <VBox layoutX="550.0" prefHeight="600.0" prefWidth="150.0" style="-fx-background-color: #3500D3; -fx-border-color: #000000;">
+         <children>
+            <Pane prefHeight="140.0" prefWidth="250.0">
+               <children>
+                  <Button fx:id="closeButton" layoutX="103.0" mnemonicParsing="false" onAction="#closeButtonAction" style="-fx-background-color: transparent;" styleClass="xButton" stylesheets="@loginButtons.css">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@X.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

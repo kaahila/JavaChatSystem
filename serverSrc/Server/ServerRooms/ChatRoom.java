@@ -32,7 +32,7 @@ public class ChatRoom {
 	 * It spreads the massage to all users in the ChatRoom
 	 */
 	
-	public void addMassageToChatRoom(ServerClient user, String massage) {
+	public void addMassageToChatRoom(ServerClient user, String massage, int RoomId) {
 		newMassageInput(user, massage);
 	}
 	
@@ -71,9 +71,9 @@ public class ChatRoom {
 	public void disconnectFromRoom(ClientHandeler client) {
 		if (client.getAktuelleChatRoom() == null) {
 			return;
+		} else {
+			client.getAktuelleChatRoom().getClientsInRoom().remove(client);
 		}
-		client.getAktuelleChatRoom().getClientsInRoom().remove(client);
-		
 	}
 	
 	public int getId() {
