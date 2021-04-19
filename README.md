@@ -3,7 +3,7 @@ Englische Version hier: [English](README.md)<br>
 JChat ist ein Chat Programm welches mit Java entwickelt wurde. Es benutzt eine Websocket Library um mit den Clients zu kommunizieren.
 
 ### ✨ Features
-* MySQL / SQLite Datenbanken für die Datenspeicherung
+* MySQL Datenbanken für die Datenspeicherung
 * Konfigurationsdatei (siehe [config.properties](#-Die-Konfigurationsdatei))
 * Nicht blockierendes Paket Management
 
@@ -31,14 +31,11 @@ JChat ist ein Chat Programm welches mit Java entwickelt wurde. Es benutzt eine W
 Die [config.properties](config.properties) enthält wichtige Informationen, z.B. den Benutzernamen und das Passwort für den MySQL Server.  
 | Name | Beschreibung | Standardwert |
 |:-------------:|:-----------:|:------------:|
-| database.table   | Der Name der Tabelle in der die Benutzer gespeichert werden | users |
-| database.database| Der Name der Datenbank welche benutzt werden soll | jchat |
-| database.password| Das Passwort für den MySQL Server | root |
-| database.username| Der Benutzername für den MySQL Server | root |
-| database.host| Die Adresse des MySQL Servers | 127.0.0.1 |
-| database.port| Der Port des MySQL Servers | 3306 |
-| server.ip | Die Adresse an der sich der Server binden soll | 0.0.0.0 |
-| server.port | Der Port des Websocket Servers | 5333 | 
-| server.logging | Boolean Wert ob der Server Nachrichten aufzeichnen soll | false |
-| server.auto-discovery | Boolean Wert ob der Server den Clients im selben Netzwerk automatisch die IP senden soll | false |
-| storage.default | Der Standardwert für die Datenspeicherung (Möglich sind: `mysql` oder `sqlite`)| sqlite |
+| mySqlClientAccountTableName   | Der Name der Tabelle in der die Benutzer gespeichert werden | clientAccountTable |
+| mySqlChatServerDatabaseName| Der Name der Datenbank welche benutzt werden soll | ChatServerDatabase |
+| mySqlPassword| Das Passwort für den MySQL Server | password |
+| mySqlUsername| Der Benutzername für den MySQL Server | root |
+| mySqlHostAdress| Die Adresse des MySQL Servers | 127.0.0.1 |
+| mySqlPort| Der Port des MySQL Servers | 3306 |
+| serverHostAdress | Die Adresse an der sich der Server binden soll | 0.0.0.0 |
+| serverHostPort | Der Port des Websocket Servers | 5333 | 
