@@ -5,6 +5,8 @@ import Server.FileManager.FileManager;
 import Server.ServerClient.ClientHandeler.ClientListener;
 import Server.ServerRooms.ServerRoomsManager;
 
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 
 
@@ -26,7 +28,7 @@ public class Server {
 		port = Integer.parseInt(fileManager.getServerPort());
 		
 		try {
-			server = new ServerSocket(port);
+			server = new ServerSocket(port, 0, InetAddress.getByName(hostname));
 			new ClientListener(server).start();
 			System.out.println("Server is waiting for Client: "+server);
 			

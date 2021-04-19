@@ -24,7 +24,8 @@ public class ChatRoomFx {
 		ScrollPane s = new ScrollPane();
 		s.setPrefHeight(500);
 		s.setPrefWidth(500);
-		s.setStyle("-fx-background: #3c3c3c; -fx-border-color: #3c3c3c;");
+		s.getStylesheets().add(getClass().getResource("ScrollPane.css").toExternalForm());
+
 		
 		//Init Gridpane
 		GridPane g = new GridPane();

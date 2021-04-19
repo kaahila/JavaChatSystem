@@ -82,7 +82,8 @@ public class DatenbankManager {
 			mysqlConnection = DriverManager.getConnection("jdbc:mysql://" + hostAdress + ":" + port +
 									"/" + databaseName + "?serverTimezone=UTC", username, password);
 
-			PreparedStatement ps = mysqlConnection.prepareStatement("SELECT * FROM "+userTabelName+" WHERE username='"+usernameInput+"'");
+			PreparedStatement ps = mysqlConnection.prepareStatement("SELECT * FROM "+userTabelName+" WHERE username=?");
+			ps.setString(1, usernameInput);
 			ResultSet resultSet = ps.executeQuery();
 
 				if (resultSet.next() && resultSet.getString(1).equalsIgnoreCase(usernameInput)) {
@@ -120,19 +121,25 @@ public class DatenbankManager {
 			mysqlConnection = DriverManager.getConnection("jdbc:mysql://" + hostAdress + ":" + port + 
 									"/" + databaseName + "?serverTimezone=UTC", username, password);
 			PreparedStatement ps = mysqlConnection.prepareStatement("SELECT username FROM "+userTabelName+" WHERE username='"+usernameInput+"'");
+			ps.setString(1,usernameInput);
 			ResultSet resultSet = ps.executeQuery();
 
 				if (resultSet.next() && resultSet.getString(1).equalsIgnoreCase(usernameInput)) {
 					usernameAvailable = false;
-					
+
 				}
-				
+
 				resultSet.next();
-			
-			
+
+
 			if (usernameAvailable) {
-				mysqlConnection.createStatement().executeUpdate("INSERT INTO " + userTabelName + 
-																"(username, password) VALUES ('"+usernameInput+"', '"+passwordInput+"')");
+
+				PreparedStatement preparedStatement = mysqlConnection.prepareStatement("INSERT INTO " + userTabelName +
+																"(username, password) VALUES (?, ?)");
+				preparedStatement.setString(1, usernameInput);
+				preparedStatement.setString(2, passwordInput);
+				preparedStatement.execute();
+
 				System.out.println("[DatenbankManager] user added");
 				ret = true;
 

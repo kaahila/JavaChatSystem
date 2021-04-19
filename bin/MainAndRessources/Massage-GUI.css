@@ -35,9 +35,3 @@
     -fx-alignment: CENTER;
     -fx-text-fill: #e6e6e6;
 }
-
-.tab-pane .tab .scroll-pane
-{
-	-fx-border-color: #3c3c3c;
-	-fx-background: #3c3c3c;
-}
