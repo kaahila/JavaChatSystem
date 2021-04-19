@@ -1,6 +1,5 @@
 # 💬 JavaChatSystem 
-Englische Version hier: [English](README.md)<br>
-JChat ist ein Chat Programm welches mit Java entwickelt wurde. Es benutzt eine Websocket Library um mit den Clients zu kommunizieren.
+JavaChatSystem ist ein Chat Programm welches mit Java entwickelt wurde.
 
 ### ✨ Features
 * MySQL Datenbanken für die Datenspeicherung
