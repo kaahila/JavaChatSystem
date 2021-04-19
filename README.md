@@ -41,4 +41,4 @@ Die [config.properties](config.properties) enthält wichtige Informationen, z.B.
 | mySqlHostAdress| Die Adresse des MySQL Servers | 127.0.0.1 |
 | mySqlPort| Der Port des MySQL Servers | 3306 |
 | serverHostAdress | Die Adresse an der sich der Server binden soll | 0.0.0.0 |
-| serverHostPort | Der Port des Websocket Servers | 5333 | 
+| serverHostPort | Der Port des JavaServerSocket | 5333 | 
