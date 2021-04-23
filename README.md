@@ -24,7 +24,8 @@ JavaChatSystem ist ein Chat Programm welches mit Java entwickelt wurde.
 1. Kompiliere den Code oder lade die neuste Version herunter
 2. Starte den Server wie folgt `java -jar <server-datei>`
 3. Der Server wird eine `config.properties` erstellen (siehe [config.properties](#-Die-Konfigurationsdatei))
-4. Starte den Server erneut, nachdem die Konfigurationsdatei überprüft wurde<br/><br/><br/>
+4. Konfigurationsdatei anpassen(MySql-Server-Daten eintragen, Ip und Port anpassen)
+5. Starte den Server erneut, nachdem die Konfigurationsdatei überprüft/angepasst wurde<br/><br/><br/>
 
 ### 🚀 Ausführen - Client
 1. Kompiliere den Code oder lade die neuste Version herunter
