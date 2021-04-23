@@ -18,6 +18,7 @@ JavaChatSystem ist ein Chat Programm welches mit Java entwickelt wurde.
 2. Das Gradle Projekt in eine IDE importieren
 3. Den Gradle Task `shadowJar` ausführen, welcher sich in `shadow` befindet
 4. Die kompilierte Datei befindet sich in `build/libs/`
+5. Man benötigt zum ausführen in einer IDE die Libarys mysql-connector und fxml-compiler
 
 ### 🚀 Ausführen - Server
 
