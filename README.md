@@ -30,7 +30,8 @@ JavaChatSystem ist ein Chat Programm welches mit Java entwickelt wurde.
 
 ### 🚀 Ausführen - Client
 1. Kompiliere den Code oder lade die neuste Version herunter
-2. Starte den Client wie folgt `java -jar <client-datei>` oder Client Datei mit Doppelklick ausführen
+2. Starte den Client wie folgt `java -jar <client-datei>` oder Client Datei mit Doppelklick ausführen 
+   (Aktuell aus Lizenrechten einer Libary noch nicht möglich) muss in IDE ausgeführt werden
 
 ## 📄 Die Konfigurationsdatei
 Die [config.properties](config.properties) enthält wichtige Informationen, z.B. den Benutzernamen und das Passwort für den MySQL Server.  
