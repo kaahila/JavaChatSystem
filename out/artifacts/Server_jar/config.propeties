@@ -1,10 +1,10 @@
 #ServerConfigFile
-#Thu Apr 01 13:32:09 CEST 2021
-mySqlChatServerDatabaseName=ChatServerDatabase
-mySqlPassword=password
+#Fri Apr 23 12:50:09 CEST 2021
+mySqlHostAdress=127.0.0.1
 mySqlPort=3306
 mySqlClientAccountTableName=clientAccountTable
-mySqlHostAdress=127.0.0.1
 serverHostPort=4444
+mySqlPassword=password
 serverHostAdress=127.0.0.1
 mySqlUsername=root
+mySqlChatServerDatabaseName=ChatServerDatabase

@@ -4,8 +4,6 @@
       <root url="jar://$PROJECT_DIR$/../../Other/org.eclipse.fx.fxml.compiler_1.1.0-SNAPSHOT.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../Other/org.eclipse.fx.fxml.compiler_1.1.0-SNAPSHOT.jar!/src" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>
