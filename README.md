@@ -1,3 +1,5 @@
+### Disclaimer: This was an school project and will longer be maintained.
+
 # 💬 JavaChatSystem 
 JavaChatSystem ist ein Chat Programm welches mit Java entwickelt wurde.
 
